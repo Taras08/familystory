@@ -1,0 +1,132 @@
+@import './vars';
+@import './home-page';
+@import './fonts';
+@import './global-components';
+@import './auth';
+
+
+html {
+    box-sizing: border-box;
+  }
+  *,*::after,*::before {
+    box-sizing:inherit;
+  }
+  ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, hgroup, p, blockquote, figure, form, fieldset, input, legend, pre, abbr, button {
+      margin: 0;
+      padding: 0;
+  }
+  li {
+    list-style-type: none;
+  }
+  
+.wrapper {
+    height: $heightBody;
+    overflow: auto;
+}
+.global-header {
+    height: $heigtHeader;
+    background-color: $black;
+    &__logo {
+        width:35px;
+        height:35px;
+        cursor: pointer;
+    }
+    &__exit {
+        width:20px;
+        height:20px;
+        opacity: 0.7;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+.global-container {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+}
+.nav-menu {
+    &__ul {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(6, 1fr);
+        min-width: 768px;
+        color: $white; 
+    }
+    &__item {
+        position: relative;
+        padding-top:7px;
+        text-align: center;
+        cursor: pointer;
+        span {
+            opacity: 0.7;
+        }
+        &:hover span {
+            opacity: 1;
+        }
+        & button {
+            margin-top: 3px;
+            &:hover {
+                border-bottom: none;
+            }
+        }
+    }
+    &__logo {
+        text-align: center;
+        opacity: 0.7;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    &__container {
+        width: 150px;
+        height: 100px;
+        background-color: $white;
+        position: absolute;
+        top: 6.5vh;
+        z-index: 20;
+        border-radius: 5px;
+        border: 1px solid $black;
+        opacity: 0.7;
+    }
+    &__caret {
+        overflow: hidden;
+        position: absolute;
+        bottom: -11px;
+        width: 10px;
+        height: 8px;
+        z-index: 21;
+        opacity: 1;
+        &:after {
+            background-color: $white;
+            border: 1px solid $black;
+            left: 50%;
+            content: "";
+            position: absolute;
+            top: -0.5px;
+            width: 10px;
+            height: 10px;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-transform-origin: 0% 0;
+            transform-origin: 0% 0;
+            z-index: 21;
+        }
+    }
+    &__li {
+        justify-content: center;
+        margin:auto;
+        border-bottom: 1px solid $black;
+        padding: 10px 0;
+        width: 110px;
+    }
+    &__button {
+        width:100%;
+        cursor: pointer;
+        background-color: $white;
+        &:hover span {
+            border-bottom: 1px solid $blue;
+        }
+    }
+}
+
+@import './mobile';

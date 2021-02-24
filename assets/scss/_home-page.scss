@@ -1,0 +1,72 @@
+.home-page {
+    display:grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas: "baner baner baner"
+                         ". photgrapher ."
+                         ". test .";                     
+}
+#photo-baner {
+    grid-area: baner;
+    height: $heightBody;
+    background-image: url('/baner/baner.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;   
+}
+.photo-baner {
+    &__title {
+        text-align: center;
+        width: 500px;
+        position: absolute;
+        left:0;
+        right: 0;
+        margin:auto;
+        margin-top: 20px;
+        color: $blue;
+        font-family: 'Marck Script', cursive;
+        font-size: 18px;
+        font-weight: 400;
+        & h1 {
+           margin-bottom: 20px; 
+        }
+    }
+    &__buttons {
+        position: absolute;
+	    top: 0;
+	    bottom: 0;
+	    left: 0;
+        right: 0;
+        width:500px;
+        height: 20px;    
+        margin: auto;
+        display:grid;
+        grid-template-columns: repeat(auto-fill, 200px);
+        grid-column-gap: 50px;
+        &:focus {
+            outline: none;
+        }
+    }
+    &__button {
+        height: 20px;
+    }
+}
+.home-photgrapher {
+    grid-area: photgrapher;
+    height: $heightBody;
+    background-color: aqua;
+}
+.test {
+    grid-area: test;
+}
+
+@media (max-width : 767px) {
+    .photo-baner {
+        &__buttons {
+            grid-template-columns: none;
+            grid-template-rows: repeat(auto-fill, 70px);
+            width: auto;
+            justify-content: center;
+        }
+    }
+}

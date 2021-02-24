@@ -1,0 +1,19 @@
+button {
+    border: none;
+    &:focus {
+        outline: none;
+    }
+} 
+.button-nav {
+    background-color: transparent;
+    color: $blue;
+    cursor: pointer;
+    font-family: 'Marck Script', cursive;
+    font-size: 22px;
+    font-weight: 500;
+    max-width: 200px;
+    max-height:20px;
+    &:hover {
+        border-bottom: 2px solid $blue;
+    }
+}

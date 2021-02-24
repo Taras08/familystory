@@ -1,0 +1,89 @@
+.mobile-header {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .photo-baner {
+        &__title {
+            max-width: 310px;
+        }
+    }
+    .active-nab-bar {
+        height:95vh;
+        transform: rotateX(10deg);
+    }
+    .mobile-header {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        &__nav-menu {
+            position: relative;
+            min-width: 25px;
+            min-height: 25px;
+            max-width: 25px;
+            max-height: 25px;
+            margin-top: 5px;
+            margin-left: 1px;
+            background-color: transparent;
+            &:after {
+                position:absolute;
+                content: '\2014';
+                color: $white;
+                top:1px;
+            }
+            &:before {
+                position:absolute;
+                content: '\2014';
+                color: $white;
+                top:8px;
+            }
+        }
+        &__ul {
+            border-top: 1px solid $white;
+            opacity: 0.7;
+        }
+        &__li {
+            border-bottom: 1px solid $white;
+            color: $white;
+            margin: 10px 40px;
+            text-align: center;
+            padding-bottom: 5px;
+        }
+        &__logo {
+            text-align: center;
+        }
+        &__right {
+            text-align: right;
+            padding-top: 7px;
+            padding-right: 13px;
+            & button { 
+                &:hover {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+    .nav-menu {
+        display: none;
+        &__container {
+            right:0;
+            left:0;
+            width: 90%;
+            margin: auto;
+        }
+    }
+    .global-container {
+        grid-template-columns: 0 1fr 0;
+    }   
+}
+.active {
+    &:before {
+        content:'\2014';
+        transform: skewy(-45deg);
+        top: 5px
+    }
+    &:after {
+        content:'\2014';
+        transform: skewy(45deg);
+        top:5px;
+    }
+}
